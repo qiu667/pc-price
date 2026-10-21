@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>PC配置四平台比价（手机版）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+body{background:#f3f5f8;padding:12px;color:#222;padding-bottom:40px}
+h1{text-align:center;font-size:20px;margin:10px 0 16px}
+.card{background:#fff;border-radius:14px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,0.08);margin-bottom:14px}
+.part-title{font-weight:600;margin:14px 0 8px;font-size:15px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.input-wrap{display:flex;align-items:center;gap:4px}
+.input-wrap label{font-size:13px;color:#555;white-space:nowrap}
+input{width:100%;padding:9px;border:1px solid #d0d7e0;border-radius:8px;font-size:15px}
+.total-box{margin-top:16px;padding:12px;background:#eef4ff;border-radius:10px;font-size:16px;font-weight:bold}
+.btn-group{margin-top:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+button{padding:11px;border:none;border-radius:10px;color:#fff;font-size:15px;cursor:pointer}
+.btn-save{background:#2563eb}
+.btn-history{background:#059669}
+.btn-clear{background:#ef4444}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px}
+th,td{border:1px solid #ddd;padding:7px;text-align:center}
+th{background:#f0f4fa}
+.hide{display:none}
+.min-price{color:#dc2626;font-weight:bold}
+</style>
+</head>
+<body>
+
+<h1>电脑配置四平台比价</h1>
+
+<div class="card">
+  <div style="font-weight:bold;margin-bottom:6px">配件清单</div>
+
+  <div class="part-title">机箱 长城商逸R68</div>
+  <div class="row">
+    <div class="input-wrap"><label>京东¥</label><input type="number" inputmode="decimal" step="0.01" id="p1_jd"></div>
+    <div class="input-wrap"><label>淘宝¥</label><input type="number" inputmode="decimal" step="0.01" id="p1_tb"></div>
+    <div class="input-wrap"><label>拼多多¥</label><input type="number" inputmode="decimal" step="0.01" id="p1_pdd"></div>
+    <div class="input-wrap"><label>闲鱼¥</label><input type="number" inputmode="decimal" step="0.01" id="p1_xy"></div>
+  </div>
+
+  <div class="part-title">散热器 利民AX120 SE</div>
+  <div class="row">
+    <div class="input-wrap"><label>京东¥</label><input type="number" inputmode="decimal" step="0.01" id="p2_jd"></div>
+    <div class="input-wrap"><label>淘宝¥</label><input type="number" inputmode="decimal" step="0.01" id="p2_tb"></div>
+    <div class="input-wrap"><label>拼多多¥</label><input type="number" inputmode="decimal" step="0.01" id="p2_pdd"></div>
+    <div class="input-wrap"><label>闲鱼¥</label><input type="number" inputmode="decimal" step="0.01" id="p2_xy"></div>
+  </div>
+
+  <div class="part-title">主板 华硕PRIME H610M-A D4</div>
+  <div class="row">
+    <div class="input-wrap"><label>京东¥</label><input type="number" inputmode="decimal" step="0.01" id="p3_jd"></div>
+    <div class="input-wrap"><label>淘宝¥</label><input type="number" inputmode="decimal" step="0.01" id="p3_tb"></div>
+    <div class="input-wrap"><label>拼多多¥</label><input type="number" inputmode="decimal" step="0.01" id="p3_pdd"></div>
+    <div class="input-wrap"><label>闲鱼¥</label><input type="number" inputmode="decimal" step="0.01" id="p3_xy"></div>
+  </div>
+
+  <div class="part-title">显卡 七彩虹战斧4060</div>
+  <div class="row">
+    <div class="input-wrap"><label>京东¥</label><input type="number" inputmode="decimal" step="0.01" id="p4_jd"></div>
+    <div class="input-wrap"><label>淘宝¥</label><input type="number" inputmode="decimal" step="0.01" id="p4_tb"></div>
+    <div class="input-wrap"><label>拼多多¥</label><input type="number" inputmode="decimal" step="0.01" id="p4_pdd"></div>
+    <div class="input-wrap"><label>闲鱼¥</label><input type="number" inputmode="decimal" step="0.01" id="p4_xy"></div>
+  </div>
+
+  <div class="part-title">内存 金百达DDR4 3200 8G×2</div>
+  <div class="row">
+    <div class="input-wrap"><label>京东¥</label><input type="number" inputmode="decimal" step="0.01" id="p5_jd"></div>
+    <div class="input-wrap"><label>淘宝¥</label><input type="number" inputmode="decimal" step="0.01" id="p5_tb"></div>
+    <div class="input-wrap"><label>拼多多¥</label><input type="number" inputmode="decimal" step="0.01" id="p5_pdd"></div>
+    <div class="input-wrap"><label>闲鱼¥</label><input type="number" inputmode="decimal" step="0.01" id="p5_xy"></div>
+  </div>
+
+  <div class="part-title">硬盘 致态TiPlus5000 1TB NVMe</div>
+  <div class="row">
+    <div class="input-wrap"><label>京东¥</label><input type="number" inputmode="decimal" step="0.01" id="p6_jd"></div>
+    <div class="input-wrap"><label>淘宝¥</label><input type="number" inputmode="decimal" step="0.01" id="p6_tb"></div>
+    <div class="input-wrap"><label>拼多多¥</label><input type="number" inputmode="decimal" step="0.01" id="p6_pdd"></div>
+    <div class="input-wrap"><label>闲鱼¥</label><input type="number" inputmode="decimal" step="0.01" id="p6_xy"></div>
+  </div>
+
+  <div class="part-title">电源 长城X6 650W</div>
+  <div class="row">
+    <div class="input-wrap"><label>京东¥</label><input type="number" inputmode="decimal" step="0.01" id="p7_jd"></div>
+    <div class="input-wrap"><label>淘宝¥</label><input type="number" inputmode="decimal" step="0.01" id="p7_tb"></div>
+    <div class="input-wrap"><label>拼多多¥</label><input type="number" inputmode="decimal" step="0.01" id="p7_pdd"></div>
+    <div class="input-wrap"><label>闲鱼¥</label><input type="number" inputmode="decimal" step="0.01" id="p7_xy"></div>
+  </div>
+
+  <div class="total-box" id="totalShow">整套合计：京东 ¥0 | 淘宝 ¥0 | 拼多多 ¥0 | 闲鱼 ¥0</div>
+
+  <div class="btn-group">
+    <button class="btn-save" onclick="saveRecord()">保存今日</button>
+    <button class="btn-history" onclick="toggleHistory()">历史记录</button>
+    <button class="btn-clear" onclick="clearAll()">清空数据</button>
+  </div>
+</div>
+
+<div class="card hide" id="historyCard">
+  <h3 style="font-size:17px;margin-bottom:8px">历史整套价格</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>日期</th>
+        <th>京东</th>
+        <th>淘宝</th>
+        <th>拼多多</th>
+        <th>闲鱼</th>
+        <th>最低平台</th>
+      </tr>
+    </thead>
+    <tbody id="historyBody"></tbody>
+  </table>
+</div>
+
+<script>
+const STORAGE_KEY = "mobile_pc_price_4060";
+const PART_COUNT = 7;
+
+function getVal(id) {
+  return Number(document.getElementById(id).value || 0);
+}
+
+function calcTotal() {
+  let jd = 0, tb = 0, pdd = 0, xy = 0;
+  for (let i = 1; i <= PART_COUNT; i++) {
+    jd  += getVal(`p${i}_jd`);
+    tb  += getVal(`p${i}_tb`);
+    pdd += getVal(`p${i}_pdd`);
+    xy  += getVal(`p${i}_xy`);
+  }
+  document.getElementById("totalShow").innerText =
+    `整套合计：京东 ¥${jd.toFixed(2)} | 淘宝 ¥${tb.toFixed(2)} | 拼多多 ¥${pdd.toFixed(2)} | 闲鱼 ¥${xy.toFixed(2)}`;
+  return { jd, tb, pdd, xy };
+}
+
+document.querySelectorAll("input").forEach(inp => {
+  inp.addEventListener("input", calcTotal);
+});
+
+function getHistory() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function setHistory(arr) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+}
+
+function saveRecord() {
+  const total = calcTotal();
+  if (total.jd === 0 && total.tb === 0 && total.pdd === 0 && total.xy === 0) {
+    alert("请至少填写一个平台价格！");
+    return;
+  }
+
+  const now = new Date();
+  const dateStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+
+  let hist = getHistory();
+  hist = hist.filter(x => x.date !== dateStr);
+  hist.push({ date: dateStr, ...total });
+  hist.sort((a, b) => new Date(a.date) - new Date(b.date));
+  setHistory(hist);
+
+  alert("✅ 今日记录保存成功！");
+  renderHistory();
+}
+
+function renderHistory() {
+  const body = document.getElementById("historyBody");
+  body.innerHTML = "";
+
+  getHistory().forEach(r => {
+    const vals = [
+      { name: "京东", v: Number(r.jd) || 0 },
+      { name: "淘宝", v: Number(r.tb) || 0 },
+      { name: "拼多多", v: Number(r.pdd) || 0 },
+      { name: "闲鱼", v: Number(r.xy) || 0 }
+    ].filter(x => x.v > 0);
+
+    const tr = document.createElement("tr");
+
+    if (vals.length === 0) {
+      tr.innerHTML = `<td>${r.date}</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>`;
+    } else {
+      const minItem = vals.reduce((a, b) => (a.v < b.v ? a : b));
+      tr.innerHTML = `
+        <td>${r.date}</td>
+        <td>${r.jd ? Number(r.jd).toFixed(2) : "-"}</td>
+        <td>${r.tb ? Number(r.tb).toFixed(2) : "-"}</td>
+        <td>${r.pdd ? Number(r.pdd).toFixed(2) : "-"}</td>
+        <td>${r.xy ? Number(r.xy).toFixed(2) : "-"}</td>
+        <td class="min-price">${minItem.name} ¥${minItem.v.toFixed(2)}</td>`;
+    }
+    body.appendChild(tr);
+  });
+}
+
+function toggleHistory() {
+  document.getElementById("historyCard").classList.toggle("hide");
+  renderHistory();
+}
+
+function clearAll() {
+  if (!confirm("确定清空全部历史记录？不可恢复！")) return;
+  localStorage.removeItem(STORAGE_KEY);
+  renderHistory();
+  alert("已清空");
+}
+
+calcTotal();
+renderHistory();
+</script>
+
+</body>
+</html>
